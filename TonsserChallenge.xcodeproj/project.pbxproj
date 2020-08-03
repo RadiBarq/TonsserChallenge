@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,14 @@
 		AFA76E6024AE167B007E208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E5E24AE167B007E208E /* Main.storyboard */; };
 		AFA76E6224AE167C007E208E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E6124AE167C007E208E /* Assets.xcassets */; };
 		AFA76E6524AE167C007E208E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E6324AE167C007E208E /* LaunchScreen.storyboard */; };
-		AFA76E7024AE167C007E208E /* TonsserChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E6F24AE167C007E208E /* TonsserChallangeUITests.swift */; };
+		AFA76E7024AE167C007E208E /* TonsserChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E6F24AE167C007E208E /* TonsserChallengeUITests.swift */; };
+		AFA76E7C24AE1749007E208E /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E7B24AE1749007E208E /* BindableViewController.swift */; };
+		AFA76E8124AE1822007E208E /* ReusableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E8024AE1822007E208E /* ReusableUIView.swift */; };
+		AFA76E8424AF138E007E208E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E8324AF138E007E208E /* HomeViewModel.swift */; };
+		AFA76E8624AF13A8007E208E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E8524AF13A8007E208E /* HomeView.swift */; };
+		AFA76E8824AF13B1007E208E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E8724AF13B1007E208E /* HomeViewController.swift */; };
+		AFA76E8B24AF17F9007E208E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = AFA76E8A24AF17F9007E208E /* RxRelay */; };
+		AFA76E8D24AF17F9007E208E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFA76E8C24AF17F9007E208E /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,12 +29,12 @@
 			containerPortal = AFA76E4D24AE167B007E208E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AFA76E5424AE167B007E208E;
-			remoteInfo = TonsserChallange;
+			remoteInfo = TonsserChallenge;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AFA76E5524AE167B007E208E /* TonsserChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonsserChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA76E5524AE167B007E208E /* TonsserChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonsserChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA76E5824AE167B007E208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA76E5A24AE167B007E208E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AFA76E5C24AE167B007E208E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +42,14 @@
 		AFA76E6124AE167C007E208E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFA76E6424AE167C007E208E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA76E6624AE167C007E208E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFA76E6B24AE167C007E208E /* TonsserChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonsserChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA76E6F24AE167C007E208E /* TonsserChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonsserChallangeUITests.swift; sourceTree = "<group>"; };
+		AFA76E6B24AE167C007E208E /* TonsserChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonsserChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA76E6F24AE167C007E208E /* TonsserChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonsserChallengeUITests.swift; sourceTree = "<group>"; };
 		AFA76E7124AE167C007E208E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA76E7B24AE1749007E208E /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
+		AFA76E8024AE1822007E208E /* ReusableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableUIView.swift; sourceTree = "<group>"; };
+		AFA76E8324AF138E007E208E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AFA76E8524AF13A8007E208E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AFA76E8724AF13B1007E208E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA76E8D24AF17F9007E208E /* RxSwift in Frameworks */,
+				AFA76E8B24AF17F9007E208E /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +75,8 @@
 		AFA76E4C24AE167B007E208E = {
 			isa = PBXGroup;
 			children = (
-				AFA76E5724AE167B007E208E /* TonsserChallange */,
-				AFA76E6E24AE167C007E208E /* TonsserChallangeUITests */,
+				AFA76E5724AE167B007E208E /* TonsserChallenge */,
+				AFA76E6E24AE167C007E208E /* TonsserChallengeUITests */,
 				AFA76E5624AE167B007E208E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,15 +84,17 @@
 		AFA76E5624AE167B007E208E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFA76E5524AE167B007E208E /* TonsserChallange.app */,
-				AFA76E6B24AE167C007E208E /* TonsserChallangeUITests.xctest */,
+				AFA76E5524AE167B007E208E /* TonsserChallenge.app */,
+				AFA76E6B24AE167C007E208E /* TonsserChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFA76E5724AE167B007E208E /* TonsserChallange */ = {
+		AFA76E5724AE167B007E208E /* TonsserChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				AFA76E7A24AE1708007E208E /* Base */,
+				AFA76E8224AF1370007E208E /* Inspiration */,
 				AFA76E5824AE167B007E208E /* AppDelegate.swift */,
 				AFA76E5A24AE167B007E208E /* SceneDelegate.swift */,
 				AFA76E5C24AE167B007E208E /* ViewController.swift */,
@@ -87,24 +103,43 @@
 				AFA76E6324AE167C007E208E /* LaunchScreen.storyboard */,
 				AFA76E6624AE167C007E208E /* Info.plist */,
 			);
-			path = TonsserChallange;
+			path = TonsserChallenge;
 			sourceTree = "<group>";
 		};
-		AFA76E6E24AE167C007E208E /* TonsserChallangeUITests */ = {
+		AFA76E6E24AE167C007E208E /* TonsserChallengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AFA76E6F24AE167C007E208E /* TonsserChallangeUITests.swift */,
+				AFA76E6F24AE167C007E208E /* TonsserChallengeUITests.swift */,
 				AFA76E7124AE167C007E208E /* Info.plist */,
 			);
-			path = TonsserChallangeUITests;
+			path = TonsserChallengeUITests;
+			sourceTree = "<group>";
+		};
+		AFA76E7A24AE1708007E208E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AFA76E7B24AE1749007E208E /* BindableViewController.swift */,
+				AFA76E8024AE1822007E208E /* ReusableUIView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AFA76E8224AF1370007E208E /* Inspiration */ = {
+			isa = PBXGroup;
+			children = (
+				AFA76E8524AF13A8007E208E /* HomeView.swift */,
+				AFA76E8724AF13B1007E208E /* HomeViewController.swift */,
+				AFA76E8324AF138E007E208E /* HomeViewModel.swift */,
+			);
+			path = Inspiration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFA76E5424AE167B007E208E /* TonsserChallange */ = {
+		AFA76E5424AE167B007E208E /* TonsserChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA76E7424AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallange" */;
+			buildConfigurationList = AFA76E7424AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallenge" */;
 			buildPhases = (
 				AFA76E5124AE167B007E208E /* Sources */,
 				AFA76E5224AE167B007E208E /* Frameworks */,
@@ -114,14 +149,18 @@
 			);
 			dependencies = (
 			);
-			name = TonsserChallange;
-			productName = TonsserChallange;
-			productReference = AFA76E5524AE167B007E208E /* TonsserChallange.app */;
+			name = TonsserChallenge;
+			packageProductDependencies = (
+				AFA76E8A24AF17F9007E208E /* RxRelay */,
+				AFA76E8C24AF17F9007E208E /* RxSwift */,
+			);
+			productName = TonsserChallenge;
+			productReference = AFA76E5524AE167B007E208E /* TonsserChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AFA76E6A24AE167C007E208E /* TonsserChallangeUITests */ = {
+		AFA76E6A24AE167C007E208E /* TonsserChallengeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA76E7724AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallangeUITests" */;
+			buildConfigurationList = AFA76E7724AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallengeUITests" */;
 			buildPhases = (
 				AFA76E6724AE167C007E208E /* Sources */,
 				AFA76E6824AE167C007E208E /* Frameworks */,
@@ -132,9 +171,9 @@
 			dependencies = (
 				AFA76E6D24AE167C007E208E /* PBXTargetDependency */,
 			);
-			name = TonsserChallangeUITests;
-			productName = TonsserChallangeUITests;
-			productReference = AFA76E6B24AE167C007E208E /* TonsserChallangeUITests.xctest */;
+			name = TonsserChallengeUITests;
+			productName = TonsserChallengeUITests;
+			productReference = AFA76E6B24AE167C007E208E /* TonsserChallengeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AFA76E5024AE167B007E208E /* Build configuration list for PBXProject "TonsserChallange" */;
+			buildConfigurationList = AFA76E5024AE167B007E208E /* Build configuration list for PBXProject "TonsserChallenge" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -165,12 +204,15 @@
 				Base,
 			);
 			mainGroup = AFA76E4C24AE167B007E208E;
+			packageReferences = (
+				AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = AFA76E5624AE167B007E208E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFA76E5424AE167B007E208E /* TonsserChallange */,
-				AFA76E6A24AE167C007E208E /* TonsserChallangeUITests */,
+				AFA76E5424AE167B007E208E /* TonsserChallenge */,
+				AFA76E6A24AE167C007E208E /* TonsserChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,8 +243,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA76E5D24AE167B007E208E /* ViewController.swift in Sources */,
+				AFA76E8624AF13A8007E208E /* HomeView.swift in Sources */,
+				AFA76E8424AF138E007E208E /* HomeViewModel.swift in Sources */,
+				AFA76E8824AF13B1007E208E /* HomeViewController.swift in Sources */,
 				AFA76E5924AE167B007E208E /* AppDelegate.swift in Sources */,
 				AFA76E5B24AE167B007E208E /* SceneDelegate.swift in Sources */,
+				AFA76E7C24AE1749007E208E /* BindableViewController.swift in Sources */,
+				AFA76E8124AE1822007E208E /* ReusableUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFA76E7024AE167C007E208E /* TonsserChallangeUITests.swift in Sources */,
+				AFA76E7024AE167C007E208E /* TonsserChallengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +266,7 @@
 /* Begin PBXTargetDependency section */
 		AFA76E6D24AE167C007E208E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AFA76E5424AE167B007E208E /* TonsserChallange */;
+			target = AFA76E5424AE167B007E208E /* TonsserChallenge */;
 			targetProxy = AFA76E6C24AE167C007E208E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -364,12 +411,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QJFHWAA62;
-				INFOPLIST_FILE = TonsserChallange/Info.plist;
+				INFOPLIST_FILE = TonsserChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,12 +429,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QJFHWAA62;
-				INFOPLIST_FILE = TonsserChallange/Info.plist;
+				INFOPLIST_FILE = TonsserChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -400,17 +447,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QJFHWAA62;
-				INFOPLIST_FILE = TonsserChallangeUITests/Info.plist;
+				INFOPLIST_FILE = TonsserChallengeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallangeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallengeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TonsserChallange;
+				TEST_TARGET_NAME = TonsserChallenge;
 			};
 			name = Debug;
 		};
@@ -420,24 +467,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QJFHWAA62;
-				INFOPLIST_FILE = TonsserChallangeUITests/Info.plist;
+				INFOPLIST_FILE = TonsserChallengeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallangeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonsser.tonsser.TonsserChallengeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TonsserChallange;
+				TEST_TARGET_NAME = TonsserChallenge;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFA76E5024AE167B007E208E /* Build configuration list for PBXProject "TonsserChallange" */ = {
+		AFA76E5024AE167B007E208E /* Build configuration list for PBXProject "TonsserChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA76E7224AE167C007E208E /* Debug */,
@@ -446,7 +493,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA76E7424AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallange" */ = {
+		AFA76E7424AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA76E7524AE167C007E208E /* Debug */,
@@ -455,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA76E7724AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallangeUITests" */ = {
+		AFA76E7724AE167C007E208E /* Build configuration list for PBXNativeTarget "TonsserChallengeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA76E7824AE167C007E208E /* Debug */,
@@ -465,6 +512,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFA76E8A24AF17F9007E208E /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		AFA76E8C24AF17F9007E208E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AFA76E4D24AE167B007E208E /* Project object */;
 }

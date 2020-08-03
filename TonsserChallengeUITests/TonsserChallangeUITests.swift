@@ -1,6 +1,6 @@
 //
-//  TonsserChallangeUITests.swift
-//  TonsserChallangeUITests
+//  TonsserChallengeUITests.swift
+//  TonsserChallengeUITests
 //
 //  Created by Kristiyan Dobrev on 02/07/2020.
 //  Copyright © 2020 Tonsser. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TonsserChallangeUITests: XCTestCase {
+class TonsserChallengeUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
