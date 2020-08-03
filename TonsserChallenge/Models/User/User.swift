@@ -10,8 +10,8 @@ import Foundation
 
 class User: Decodable {
     
-    let name: String
+    var name: String
     
-    let profilePicture: String
+    var profilePicture: String
     
 }

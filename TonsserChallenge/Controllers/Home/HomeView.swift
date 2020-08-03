@@ -8,18 +8,18 @@
 
 import UIKit
 
+
 class HomeView: ReusableUIView {
     
     // MARK: - Properties
     
-    private let padding: CGFloat = 16
-    
-    private(set) lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Hello World !"
-        label.textAlignment = .center
-        return label
+    private(set) lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        return tableView
     }()
+    
     
     // MARK: - Styling
     
@@ -30,11 +30,12 @@ class HomeView: ReusableUIView {
     // MARK: - Constraints
     
     override func makeConstraints() {
-        addSubview(titleLabel)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
+        addSubview(tableView)
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
 }

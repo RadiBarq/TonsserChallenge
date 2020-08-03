@@ -19,6 +19,7 @@
 		4BF97AA624D83A9300F615DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AA524D83A9300F615DF /* User.swift */; };
 		4BF97AA924D8470800F615DF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AA824D8470800F615DF /* ServiceType.swift */; };
 		4BF97AAC24D8596C00F615DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AAB24D8596C00F615DF /* HomeViewModel.swift */; };
+		4BF97AB524D878DA00F615DF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */; };
 		AFA76E5924AE167B007E208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E5824AE167B007E208E /* AppDelegate.swift */; };
 		AFA76E5B24AE167B007E208E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E5A24AE167B007E208E /* SceneDelegate.swift */; };
 		AFA76E6024AE167B007E208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E5E24AE167B007E208E /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		4BF97AA524D83A9300F615DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4BF97AA824D8470800F615DF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		4BF97AAB24D8596C00F615DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		AFA76E5524AE167B007E208E /* TonsserChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonsserChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA76E5824AE167B007E208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA76E5A24AE167B007E208E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		4BF97AAD24D859A200F615DF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4BF97AB124D8787A00F615DF /* Cells */,
 				4BF97AAB24D8596C00F615DF /* HomeViewModel.swift */,
 				AFA76E8724AF13B1007E208E /* HomeViewController.swift */,
 				AFA76E8524AF13A8007E208E /* HomeView.swift */,
@@ -177,6 +180,14 @@
 				AFA76E5E24AE167B007E208E /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4BF97AB124D8787A00F615DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AFA76E4C24AE167B007E208E = {
@@ -367,6 +378,7 @@
 				4BF97AA324D839D600F615DF /* UserService.swift in Sources */,
 				4BF97A9324D82EC000F615DF /* Scene+ViewController.swift in Sources */,
 				4BF97A8D24D82E6200F615DF /* Scene.swift in Sources */,
+				4BF97AB524D878DA00F615DF /* HomeTableViewCell.swift in Sources */,
 				4BF97A9124D82E9F00F615DF /* SceneCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
