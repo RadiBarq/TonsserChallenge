@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -20,9 +21,10 @@ class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var profilePicture: UIImageView = {
+    private lazy var profileImageView: UIImageView = {
         var image = UIImageView()
         image.layer.masksToBounds = true
+        image.layer.cornerRadius = 15
         return image
     }()
     
@@ -38,12 +40,21 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    override func prepareForReuse() {
+        self.imageView?.image = nil
+    }
+
     // MARK: - Configure
     
     func configure(with user: User) {
-        name.text = user.name
-        profilePicture.backgroundColor = .red
+        self.name.text = user.name
+        
+        if let profilePicture = user.profilePicture {
+            self.profileImageView.sd_setImage(with: URL(string: profilePicture)!)
+        } else {
+            self.profileImageView.image = UIImage(systemName: "person.fill")
+            self.profileImageView.tintColor = .green
+        }
     }
       
     // MARK: - Constraints
@@ -51,16 +62,26 @@ class HomeTableViewCell: UITableViewCell {
     private func makeConstraints() {
         
         self.addSubview(name)
-        name.translatesAutoresizingMaskIntoConstraints = false
-        name.leftAnchor.constraint(equalTo: self.profilePicture.rightAnchor, constant: 15).isActive = true
-        name.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15).isActive = true
-        name.centerYAnchor.constraint(equalTo: profilePicture.centerYAnchor).isActive = true
+        self.addSubview(profileImageView)
         
-        self.addSubview(profilePicture)
-        profilePicture.translatesAutoresizingMaskIntoConstraints = false
-        profilePicture.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
-        profilePicture.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
-        profilePicture.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        profilePicture.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        name.translatesAutoresizingMaskIntoConstraints = false
+        name.leftAnchor.constraint(equalTo: self.profileImageView.rightAnchor, constant: 15).isActive = true
+        name.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15).isActive = true
+        name.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
+        name.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
+        name.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+       
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+        profileImageView.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor, constant: 15).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        profileImageView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -15).isActive = true
+    }
+    
+    // MARK: - Type Functions
+    
+    static func getReueseIdentifier() -> String {
+        return "HomeTableViewCell"
     }
 }

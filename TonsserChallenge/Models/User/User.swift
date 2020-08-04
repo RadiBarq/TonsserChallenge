@@ -8,10 +8,18 @@
 
 import Foundation
 
-class User: Decodable {
+struct UserResponse: Decodable {
     
-    var name: String
-    
-    var profilePicture: String
-    
+    var response: [User]
 }
+
+struct User: Decodable {
+    
+     var name: String
+    
+     var profilePicture: String?
+
+     var slug: String
+}
+
+

@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 
 enum UserServiceError: Error {
-
     case serverError
+    case userNotFound
 }
 
 protocol UserServiceType: ServiceType {

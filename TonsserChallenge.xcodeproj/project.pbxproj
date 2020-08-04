@@ -20,9 +20,10 @@
 		4BF97AA924D8470800F615DF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AA824D8470800F615DF /* ServiceType.swift */; };
 		4BF97AAC24D8596C00F615DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AAB24D8596C00F615DF /* HomeViewModel.swift */; };
 		4BF97AB524D878DA00F615DF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */; };
+		4BF97AB724D89E0800F615DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF97AB624D89E0800F615DF /* Main.storyboard */; };
+		4BF97ABA24D8A6F200F615DF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4BF97AB924D8A6F200F615DF /* SDWebImage */; };
 		AFA76E5924AE167B007E208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E5824AE167B007E208E /* AppDelegate.swift */; };
 		AFA76E5B24AE167B007E208E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E5A24AE167B007E208E /* SceneDelegate.swift */; };
-		AFA76E6024AE167B007E208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E5E24AE167B007E208E /* Main.storyboard */; };
 		AFA76E6224AE167C007E208E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E6124AE167C007E208E /* Assets.xcassets */; };
 		AFA76E6524AE167C007E208E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA76E6324AE167C007E208E /* LaunchScreen.storyboard */; };
 		AFA76E7024AE167C007E208E /* TonsserChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA76E6F24AE167C007E208E /* TonsserChallengeUITests.swift */; };
@@ -56,10 +57,10 @@
 		4BF97AA824D8470800F615DF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		4BF97AAB24D8596C00F615DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4BF97AB624D89E0800F615DF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AFA76E5524AE167B007E208E /* TonsserChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonsserChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA76E5824AE167B007E208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA76E5A24AE167B007E208E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AFA76E5F24AE167B007E208E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFA76E6124AE167C007E208E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFA76E6424AE167C007E208E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA76E6624AE167C007E208E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 				4BF97A9A24D835A000F615DF /* RxBlocking in Frameworks */,
 				AFA76E8D24AF17F9007E208E /* RxSwift in Frameworks */,
 				AFA76E8B24AF17F9007E208E /* RxRelay in Frameworks */,
+				4BF97ABA24D8A6F200F615DF /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +118,7 @@
 		4BF97A9D24D8362F00F615DF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				4BF97AB024D859CC00F615DF /* Main */,
+				4BF97AB624D89E0800F615DF /* Main.storyboard */,
 				AFA76E6324AE167C007E208E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -174,20 +176,19 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		4BF97AB024D859CC00F615DF /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				AFA76E5E24AE167B007E208E /* Main.storyboard */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		4BF97AB124D8787A00F615DF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				4BF97AB424D878DA00F615DF /* HomeTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4BF97ABB24D8C9A600F615DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AFA76E4C24AE167B007E208E = {
@@ -212,6 +213,7 @@
 		AFA76E5724AE167B007E208E /* TonsserChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				4BF97ABB24D8C9A600F615DF /* Extensions */,
 				4BF97AAA24D8595300F615DF /* Controllers */,
 				AFA76E5824AE167B007E208E /* AppDelegate.swift */,
 				4BF97AA424D83A8700F615DF /* Models */,
@@ -274,6 +276,7 @@
 				AFA76E8C24AF17F9007E208E /* RxSwift */,
 				4BF97A9724D8354F00F615DF /* RxCocoa */,
 				4BF97A9924D835A000F615DF /* RxBlocking */,
+				4BF97AB924D8A6F200F615DF /* SDWebImage */,
 			);
 			productName = TonsserChallenge;
 			productReference = AFA76E5524AE167B007E208E /* TonsserChallenge.app */;
@@ -327,6 +330,7 @@
 			mainGroup = AFA76E4C24AE167B007E208E;
 			packageReferences = (
 				AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				4BF97AB824D8A6F200F615DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = AFA76E5624AE167B007E208E /* Products */;
 			projectDirPath = "";
@@ -343,9 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BF97AB724D89E0800F615DF /* Main.storyboard in Resources */,
 				AFA76E6524AE167C007E208E /* LaunchScreen.storyboard in Resources */,
 				AFA76E6224AE167C007E208E /* Assets.xcassets in Resources */,
-				AFA76E6024AE167B007E208E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,14 +406,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AFA76E5E24AE167B007E208E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFA76E5F24AE167B007E208E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AFA76E6324AE167C007E208E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -646,6 +642,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4BF97AB824D8A6F200F615DF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.4;
+			};
+		};
 		AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -666,6 +670,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AFA76E8924AF17F9007E208E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
+		};
+		4BF97AB924D8A6F200F615DF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BF97AB824D8A6F200F615DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 		AFA76E8A24AF17F9007E208E /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;

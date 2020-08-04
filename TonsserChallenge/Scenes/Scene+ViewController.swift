@@ -12,14 +12,12 @@ import UIKit
 extension Scene {
     
     func viewController() -> UIViewController {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         switch self {
         case .home(let viewModel):
-            let nc = storyboard.instantiateViewController(identifier: "Home") as! UINavigationController
-            var vc = nc.viewControllers.first as! HomeViewController
-            vc.bind(toViewModel: viewModel)
-            return vc
+            var viewController = HomeViewController()
+            let navigationController = UINavigationController(rootViewController: viewController)
+            viewController.bind(toViewModel: viewModel)
+            return navigationController
         }
     }
 }

@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import RxCocoa
+import RxSwift
 
 class HomeView: ReusableUIView {
     
@@ -17,9 +18,19 @@ class HomeView: ReusableUIView {
         let tableView = UITableView()
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.getReueseIdentifier())
         return tableView
     }()
     
+    private(set) var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.startAnimating()
+        activityIndicator.color = .black
+        activityIndicator.backgroundColor = .green
+        activityIndicator.layer.masksToBounds = true
+        activityIndicator.layer.cornerRadius = 5
+        return activityIndicator
+    }()
     
     // MARK: - Styling
     
@@ -37,5 +48,12 @@ class HomeView: ReusableUIView {
         self.tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         self.tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        
+        self.addSubview(activityIndicator)
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.activityIndicator.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        self.activityIndicator.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }

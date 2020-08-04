@@ -12,7 +12,7 @@ import RxCocoa
 
 struct UserService: UserServiceType {
     
-    let baseURL = URL(string: "http://api.tonsser.com/58/users/followers")!
+    let baseURL = URL(string: "http://api.tonsser.com/58/users/peter-holm/followers")!
     
     func fetch(slug: String? = nil) -> Observable<[User]> {
         let response = Observable.from([slug])
@@ -26,25 +26,26 @@ struct UserService: UserServiceType {
             let session = URLSession.shared
             return request.flatMap { request in
                 return session.rx.response(request: request)
-                    .filter { response, _ in
-                        return 400 ..< 500 ~= response.statusCode
-                    }
                     .map() { response, data in
-                    switch response.statusCode {
-                    case 200 ..< 300:
-                        return data
-                        
-                    default:
-                        throw UserServiceError.serverError
-                    }
+                        switch response.statusCode {
+                        case 200 ..< 300:
+                            return data
+                            
+                        case 400 ..< 500:
+                            throw UserServiceError.userNotFound
+                            
+                        default:
+                            throw UserServiceError.serverError
+                        }
                 }
             }
-        }
-
+        }.share(replay: 1)
+        
         return response
             .map { data in
                 let decoder = JSONDecoder()
-                return try decoder.decode([User].self, from: data)
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                return try decoder.decode(UserResponse.self, from: data).response
         }
     }
 }

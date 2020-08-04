@@ -7,12 +7,54 @@
 //
 
 import Foundation
+import UIKit
+import RxSwift
 
 class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
-            
+    
+
+    override func viewDidLoad() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Home"
+    }
+    
     // MARK: - Bind View Model
     
-    func bindViewModel() { // Here we glue the view model and the view together
+    func bindViewModel() {
         
+        self.viewModel.users.bind(to: layout.tableView.rx.items(cellIdentifier: HomeTableViewCell.getReueseIdentifier(), cellType: HomeTableViewCell.self)) {
+            (row, model, cell) in
+            cell.configure(with: model)
+        }.disposed(by: disposeBag)
+        
+        self.viewModel.loading.bind(to: self.layout.activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        self.viewModel.errorMessage
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { errorMessage in
+            
+            self.showErrorMessage(errorMessage: errorMessage)
+        })
+        .disposed(by: disposeBag)
+        
+        self.layout.tableView.rx.contentOffset
+            .flatMap { [unowned self] offset in
+                offset.y + self.layout.tableView.frame.size.height > self.layout.tableView.contentSize.height
+                    ? Observable.just(()) : Observable.empty()
+        }
+        .throttle(3, scheduler: MainScheduler.instance)
+        .subscribe(onNext: {
+            self.viewModel.fetchNextPage()
+        })
+        .disposed(by: disposeBag)
+    }
+    
+    func showErrorMessage(errorMessage: String) {
+        
+        let alertController = UIAlertController(title: "Error: ", message: errorMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default))
+        
+        self.present(alertController, animated: true)
     }
 }
