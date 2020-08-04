@@ -14,21 +14,33 @@ struct HomeViewModel {
     
     // MARK: - Properties
     
-    let disposeBag = DisposeBag()
+    private var users: BehaviorRelay<[User]>
     
-    let sceneCoordinator: SceneCoordinatorType
-    
-    let userService: UserServiceType
-    
-    var users: BehaviorRelay<[User]>
-    
-    var usersCount: Int {
+    private var usersCount: Int {
         return self.users.value.count
     }
     
-    var loading: PublishSubject<Bool>
+    private var loading: PublishSubject<Bool>
     
-    var errorMessage: PublishSubject<String>
+    private var errorMessage: PublishSubject<String>
+
+    private var disposeBag = DisposeBag()
+    
+    private var sceneCoordinator: SceneCoordinatorType
+    
+    private var userService: UserServiceType
+    
+    var usersObservable: Driver<[User]> {
+        self.users.asDriver()
+    }
+    
+    var loadingObservable: Driver<Bool> {
+        self.loading.asDriver(onErrorJustReturn: false)
+    }
+    
+    var errorMessageObservable: Driver<String> {
+        self.errorMessage.asDriver(onErrorJustReturn: "Something Went Wrong")
+    }
     
     init(userService: UserServiceType, sceneCoordinator: SceneCoordinatorType) {
         self.userService = userService
@@ -38,6 +50,8 @@ struct HomeViewModel {
         self.errorMessage = PublishSubject<String>()
         fetchUsers(slug: nil)
     }
+    
+    // MARK: - Fetch Functions
     
     func fetchNextPage() {
         if usersCount > 0 {

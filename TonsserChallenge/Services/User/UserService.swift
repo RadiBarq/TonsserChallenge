@@ -12,11 +12,15 @@ import RxCocoa
 
 struct UserService: UserServiceType {
     
+    // MARK: - Properties
+    
     let baseURL = URL(string: "http://api.tonsser.com/58/users/peter-holm/followers")!
+    
+    // MARK: - Fetch
     
     func fetch(slug: String? = nil) -> Observable<[User]> {
         let response = Observable.from([slug])
-            .map { urlString -> Observable<URLRequest> in
+            .flatMap { urlString -> Observable<URLRequest> in
                 guard let urlString = urlString else {
                     return self.buildRequest(pathComponent: "", params: [])
                 }
@@ -24,20 +28,18 @@ struct UserService: UserServiceType {
         }
         .flatMap { request -> Observable<Data> in
             let session = URLSession.shared
-            return request.flatMap { request in
-                return session.rx.response(request: request)
-                    .map() { response, data in
-                        switch response.statusCode {
-                        case 200 ..< 300:
-                            return data
-                            
-                        case 400 ..< 500:
-                            throw UserServiceError.userNotFound
-                            
-                        default:
-                            throw UserServiceError.serverError
-                        }
-                }
+            return session.rx.response(request: request)
+                .map { response, data in
+                    switch response.statusCode {
+                    case 200 ..< 300:
+                        return data
+                        
+                    case 400 ..< 500:
+                        throw UserServiceError.userNotFound
+                        
+                    default:
+                        throw UserServiceError.serverError
+                    }
             }
         }.share(replay: 1)
         

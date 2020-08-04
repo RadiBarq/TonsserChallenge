@@ -11,7 +11,6 @@ import UIKit
 import RxSwift
 
 class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
-    
 
     override func viewDidLoad() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -22,17 +21,16 @@ class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
     
     func bindViewModel() {
         
-        self.viewModel.users.bind(to: layout.tableView.rx.items(cellIdentifier: HomeTableViewCell.getReueseIdentifier(), cellType: HomeTableViewCell.self)) {
+        self.viewModel.usersObservable.drive(layout.tableView.rx.items(cellIdentifier: HomeTableViewCell.getReueseIdentifier(), cellType: HomeTableViewCell.self)) {
             (row, model, cell) in
             cell.configure(with: model)
         }.disposed(by: disposeBag)
         
-        self.viewModel.loading.bind(to: self.layout.activityIndicator.rx.isAnimating)
+        self.viewModel.loadingObservable.drive( self.layout.activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
-        self.viewModel.errorMessage
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { errorMessage in
+        self.viewModel.errorMessageObservable
+            .drive(onNext: { errorMessage in
             
             self.showErrorMessage(errorMessage: errorMessage)
         })
@@ -43,7 +41,7 @@ class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
                 offset.y + self.layout.tableView.frame.size.height > self.layout.tableView.contentSize.height
                     ? Observable.just(()) : Observable.empty()
         }
-        .throttle(3, scheduler: MainScheduler.instance)
+        .throttle(.seconds(3), scheduler: MainScheduler.instance)
         .subscribe(onNext: {
             self.viewModel.fetchNextPage()
         })

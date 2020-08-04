@@ -184,13 +184,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		4BF97ABB24D8C9A600F615DF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		AFA76E4C24AE167B007E208E = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +206,6 @@
 		AFA76E5724AE167B007E208E /* TonsserChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				4BF97ABB24D8C9A600F615DF /* Extensions */,
 				4BF97AAA24D8595300F615DF /* Controllers */,
 				AFA76E5824AE167B007E208E /* AppDelegate.swift */,
 				4BF97AA424D83A8700F615DF /* Models */,
@@ -221,7 +213,6 @@
 				4BF97A9D24D8362F00F615DF /* Storyboards */,
 				4BF97A8B24D82E4F00F615DF /* Scenes */,
 				AFA76E7A24AE1708007E208E /* Base */,
-				AFA76E8224AF1370007E208E /* Inspiration */,
 				AFA76E5A24AE167B007E208E /* SceneDelegate.swift */,
 				AFA76E6124AE167C007E208E /* Assets.xcassets */,
 				AFA76E6624AE167C007E208E /* Info.plist */,
@@ -246,13 +237,6 @@
 				AFA76E8024AE1822007E208E /* ReusableUIView.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		AFA76E8224AF1370007E208E /* Inspiration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Inspiration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
