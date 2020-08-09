@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB6B60624E0B30C00523B0C /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6B60524E0B30C00523B0C /* UIViewController+Rx.swift */; };
 		4BF97A8D24D82E6200F615DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97A8C24D82E6200F615DF /* Scene.swift */; };
 		4BF97A8F24D82E8000F615DF /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97A8E24D82E8000F615DF /* SceneCoordinatorType.swift */; };
 		4BF97A9124D82E9F00F615DF /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF97A9024D82E9F00F615DF /* SceneCoordinator.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BB6B60524E0B30C00523B0C /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		4BF97A8C24D82E6200F615DF /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		4BF97A8E24D82E8000F615DF /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		4BF97A9024D82E9F00F615DF /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BB6B60424E0B2EA00523B0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BB6B60524E0B30C00523B0C /* UIViewController+Rx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4BF97A8B24D82E4F00F615DF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		AFA76E5724AE167B007E208E /* TonsserChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				4BB6B60424E0B2EA00523B0C /* Extensions */,
 				4BF97AAA24D8595300F615DF /* Controllers */,
 				AFA76E5824AE167B007E208E /* AppDelegate.swift */,
 				4BF97AA424D83A8700F615DF /* Models */,
@@ -355,6 +366,7 @@
 				4BF97AA024D8387400F615DF /* UserServiceType.swift in Sources */,
 				4BF97AA924D8470800F615DF /* ServiceType.swift in Sources */,
 				AFA76E8624AF13A8007E208E /* HomeView.swift in Sources */,
+				4BB6B60624E0B30C00523B0C /* UIViewController+Rx.swift in Sources */,
 				4BF97AA624D83A9300F615DF /* User.swift in Sources */,
 				AFA76E8824AF13B1007E208E /* HomeViewController.swift in Sources */,
 				AFA76E5924AE167B007E208E /* AppDelegate.swift in Sources */,

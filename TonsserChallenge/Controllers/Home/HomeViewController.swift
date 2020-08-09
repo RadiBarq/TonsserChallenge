@@ -30,9 +30,11 @@ class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
             .disposed(by: disposeBag)
         
         self.viewModel.errorMessageObservable
-            .drive(onNext: { errorMessage in
-            
-            self.showErrorMessage(errorMessage: errorMessage)
+            .drive(onNext: { [unowned self] errorMessage in
+                self.alert(title: "Error:", text: errorMessage)
+                    .subscribe()
+                    .disposed(by: self.disposeBag)
+           
         })
         .disposed(by: disposeBag)
         
@@ -46,13 +48,5 @@ class HomeViewController: BindableViewController<HomeView, HomeViewModel> {
             self.viewModel.fetchNextPage()
         })
         .disposed(by: disposeBag)
-    }
-    
-    func showErrorMessage(errorMessage: String) {
-        
-        let alertController = UIAlertController(title: "Error: ", message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default))
-        
-        self.present(alertController, animated: true)
     }
 }

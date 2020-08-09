@@ -20,13 +20,13 @@ struct UserService: UserServiceType {
     
     func fetch(slug: String? = nil) -> Observable<[User]> {
         let response = Observable.from([slug])
-            .flatMap { urlString -> Observable<URLRequest> in
+            .flatMapLatest { urlString -> Observable<URLRequest> in
                 guard let urlString = urlString else {
                     return self.buildRequest(pathComponent: "", params: [])
                 }
                 return self.buildRequest(pathComponent: "", params: [("current_follow_slug", urlString)])
         }
-        .flatMap { request -> Observable<Data> in
+        .flatMapLatest { request -> Observable<Data> in
             let session = URLSession.shared
             return session.rx.response(request: request)
                 .map { response, data in
